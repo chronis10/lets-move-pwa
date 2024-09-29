@@ -1,0 +1,18 @@
+
+{
+    "name": "Let's Move",
+    "short_name": "Let's Move",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#4f0e55",
+    "icons": [
+
+      {
+        "src": "assets/icon-512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+  }
+  

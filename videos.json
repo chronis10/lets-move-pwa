@@ -1,0 +1,13 @@
+{
+    "categories": [
+      {"id": 1, "name": "Dance"},
+      {"id": 2, "name": "Squats"},
+      {"id": 3, "name": "Push Ups"}
+    ],
+    "videos": [
+      {"categoryId": 1, "url": "videos/dance.mp4"},
+      {"categoryId": 2, "url": "videos/squats.mp4"},
+      {"categoryId": 3, "url": "videos/pushups.mp4"}
+    ]
+  }
+  

@@ -1,0 +1,336 @@
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;  /* Prevent body scrolling */
+    overscroll-behavior: none;  /* Prevent bounce effect on iOS */
+    touch-action: none;  /* Prevent default touch actions */
+    user-select: none;  /* Disable text selection */
+    width: 100%;
+    height: 100%;
+    background-color: #4f0e55;
+}
+
+#game-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+#start-screen, #game-over-screen {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    top:0px;
+}
+
+#start-screen h1, #game-over-screen h1 {
+    font-size: 48px;
+    text-shadow: 2px 2px 4px #000;
+    margin-top: 50px;
+    font-family: sans-serif;
+    color: #e0a80b;
+}
+
+#game-over-screen p {
+    font-size: 30px;
+    text-shadow: 2px 2px 4px #000;
+    margin: 50px;
+    font-family: sans-serif;
+    color: #ffffff;
+}
+
+#user-id-section {
+
+    /* display: flex; */
+    flex-direction: column;
+    align-items: center; /* Centers elements horizontally */
+    gap: 10px; /* Adds space between each element */
+}
+
+#user-id-section h2, #category-screen h2, #video-screen h2 {
+    font-size: 24px;
+    font-family: sans-serif;
+    color: #e0a80b;
+}
+#category-screen h2 {
+    margin-top: 50px;
+
+}
+
+
+#user-id-input {
+    padding: 20px 40px;
+    font-size: 18px;
+    border-radius: 1em;
+    border: 2px solid #028d86;
+    margin-top: 10px;
+    text-align: center;
+    font-family: sans-serif;
+    color: #e0a80b;
+}
+
+#submit-id-button, #start-button, #restart-button, #back-to-category, #back-to-start, #back-to-game {
+    padding: 20px 40px;
+    font-size: 24px;
+    background-color: #028d86;
+    border-radius: 1em;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 50px;
+}
+
+#start-button.hidden {
+    display: none;
+}
+
+.hidden {
+    display: none;
+}
+
+#game-screen {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#question-container {
+    width: 70%; /* Adjust width of the question container */
+    margin-bottom: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid #e0a80b;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+#question-text {
+    font-size: 28px;
+    color: #e0a80b;
+    font-family: sans-serif;
+    text-shadow: 1px 1px 3px #000;
+    margin-bottom: 20px;
+}
+
+#answers-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.answer-button {
+    padding: 15px 25px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #028d86;
+    border-radius: 1em;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-family: sans-serif;
+}
+
+.answer-button:hover {
+    background-color: #e0a80b;
+}
+
+#score-bar, #life-counter {
+
+    position: absolute;
+    z-index: 2;
+}
+
+#score-bar {
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    font-family: sans-serif;
+    color: #e0a80b;
+}
+
+#life-counter {
+    top: 10px;
+    left: 10px;
+}
+
+.life {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.logo, .ninja-logo, .bottom-image {
+    display: block;
+    margin: 20px auto;
+    
+}
+
+.logo {
+    width: 300px;
+}
+
+.ninja-logo {
+    padding-top: 80px;
+
+    width: 350px;
+    margin-bottom: 40px;
+}
+
+.bottom-image {
+    width: 150px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#back-to-category, #back-to-start {
+
+
+        width: 350px;
+        position: fixed;
+        bottom: 10px;
+        
+      
+        z-index: 10; /* Ensure buttons are above other elements */
+ 
+}
+
+
+.correct {
+    background-color: green;
+    color: white;
+}
+.incorrect {
+    background-color: red;
+    color: white;
+}
+
+#high-score-section {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+    margin-top: 50px;        /* Add some space above if needed */
+}
+
+/* Style the high score text */
+#high-score-text {
+    font-size: 24px;         /* Increase font size */
+    font-weight: bold;       /* Make the text bold */
+    color: #fffafa;             /* Change the color as needed */
+    font-family: sans-serif; /* Change the font family as needed */
+}
+
+
+
+
+
+
+/* Category Screen */
+#category-screen {
+  
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#category-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px;
+    
+}
+
+.category-card {
+    width: 150px;
+    height: 150px;
+    background-color: #028d86;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-family: sans-serif;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#cat-cont{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+
+}
+
+.category-card:hover {
+    transform: scale(1.1);
+}
+
+/* Video Screen */
+#video-screen {
+    align-items: center;
+    justify-content: center;
+}
+
+#video-wrap{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+#video-container {
+
+    position: relative;
+}
+
+#video-frame {
+    display: inline-block;
+    /* border: 5px solid #e0a80b;
+    border-radius: 15px; */
+}
+
+#camera-preview {
+    display: inline-block;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    border: 2px solid #e0a80b;
+    border-radius: 15px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #028d86;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e0a80b;
+}

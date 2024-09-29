@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Let's Move</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <div id="game-container">
+        <div id="start-screen" class="screen">
+            <img src="assets/lets-move.png" alt="Game Logo" class="ninja-logo">
+            <img src="assets/logo.png" alt="Game Logo" class="logo"> <!-- Add logo image -->
+            
+      
+            <div id="user-id-section">
+                <h2>Enter User ID</h2>
+                <input type="text" id="user-id-input" placeholder="Enter your ID">
+                <button id="submit-id-button">Submit</button>
+            </div>
+            <button id="start-button" class="hidden">Start Game</button>
+            <img src="assets/eu.png" alt="Bottom Image" class="bottom-image">
+        </div>
+        
+        <div id="category-screen" class="screen hidden">
+            <div id="cat-cont">
+                <h2>Select a Category</h2>
+                <div id="category-container" class="screen hidden"></div>
+                <button id="back-to-start" class="screen hidden">Back to Start</button>
+            </div>
+        </div>
+        
+        <div id="video-screen" class="screen hidden">
+            
+            <div id="video-wrap">
+                <h2>Let's Move together!</h2>
+                <div id="video-container" class="screen hidden">
+                    <iframe id="video-frame" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <video id="camera-preview" autoplay muted></video>
+                </div>
+                <button id="back-to-category" class="screen hidden">Back to Categories</button>
+            </div>
+        </div>
+        
+
+
+    <script src="js/main.js"></script> <!-- Your game logic script -->
+</body>
+</html>
