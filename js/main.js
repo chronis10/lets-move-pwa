@@ -98,7 +98,7 @@ function showVideoScreen(categoryId) {
             <video id="local-video"  src="${videoUrl}" controls autoplay loop playsinline webkit-playsinline">
                 Your browser does not support the video tag.
             </video>
-            <video id="camera-preview" width="50%"  autoplay muted style="border: 2px solid #e0a80b; border-radius: 15px;"></video>
+            <video id="camera-preview" width="50%"  autoplay muted  playsinline webkit-playsinline style="border: 2px solid #e0a80b; border-radius: 15px;"></video>
         `;
 
         // Adjust the video dimensions dynamically based on the video's actual aspect ratio
