@@ -95,19 +95,26 @@ function showVideoScreen(categoryId) {
 
         // Embed an HTML5 video element with autoplay, loop, sound unmuted, and inline playback on mobile
         videoContainer.innerHTML = `
-            <video id="local-video"  src="${videoUrl}" controls autoplay loop playsinline webkit-playsinline">
+            <video id="local-video" src="${videoUrl}" controls autoplay loop playsinline webkit-playsinline style="width: 800px; height: auto;">
                 Your browser does not support the video tag.
             </video>
-            <video id="camera-preview" width="50%"  autoplay muted  playsinline webkit-playsinline style="border: 2px solid #e0a80b; border-radius: 15px;"></video>
+            <video id="camera-preview" width="150px" autoplay muted playsinline webkit-playsinline style="border: 2px solid #e0a80b; border-radius: 15px;"></video>
         `;
 
         // Adjust the video dimensions dynamically based on the video's actual aspect ratio
         const videoElement = document.getElementById('local-video');
         videoElement.addEventListener('loadedmetadata', () => {
             const aspectRatio = videoElement.videoWidth / videoElement.videoHeight;
-            const maxVideoWidth = 800; // Increase width to 800px
+            const maxVideoWidth = 800; // Set desired maximum width
             videoElement.style.width = `${Math.min(maxVideoWidth, maxVideoWidth * aspectRatio)}px`;
             videoElement.style.height = `${Math.min(500, 500 / aspectRatio)}px`;
+        });
+
+        // Add event listener to handle exiting fullscreen mode gracefully
+        videoElement.addEventListener('fullscreenchange', () => {
+            if (!document.fullscreenElement) {
+                videoElement.pause(); // Pause the video on exiting fullscreen
+            }
         });
 
         // Start camera preview
